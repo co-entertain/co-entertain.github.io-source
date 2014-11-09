@@ -1,0 +1,15 @@
+---
+last_check:
+  etag: 
+  version: 1.7.2
+  at: 1415536520
+checked_completion: true
+completion_version: 1.7.2
+endpoints:
+  https://api.travis-ci.org/:
+    access_token: 
+repos:
+  co-entertain/niceworld:
+    endpoint: https://api.travis-ci.org/
+  co-entertain/co-entertain.github.io:
+    endpoint: https://api.travis-ci.org/
