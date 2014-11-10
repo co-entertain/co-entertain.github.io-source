@@ -15,6 +15,7 @@
 	<link href="{{ SITEURL }}/theme/bootstrap.min.css" rel="stylesheet">
 	<link href="{{ SITEURL }}/theme/local.css" rel="stylesheet">
 	<link href="{{ SITEURL }}/theme/pygments.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/tipuesearch/tipuesearch.css" rel="stylesheet" >
     <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/icons/favicon.ico" >
 
 	<!-- Feeds -->
@@ -60,8 +61,8 @@
 				{% endif %}
 			</ul>
             <div class="nav-collapse collapse">
-                <form class="navbar-search pull-right">
-                    <input type="text" class="search-query" placeholder="Search">
+                <form class="navbar-search pull-right" id="searchform" action="/search" onsubmit="return (this.elements['q'].value.length > 0)">
+                    <input type="text" name="q" class="search-query" placeholder="Search">
                 </form>
             </div>
 		</div>
