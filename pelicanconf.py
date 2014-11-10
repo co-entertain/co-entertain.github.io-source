@@ -32,9 +32,10 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         )
+LINKS = (('Zonca', 'http://zonca.github.io/'),
+        ('Moparx', 'http://.moparx.com/'),
+        ('Friparia', 'http://blog.friparia.com/'),
+        )
 
 # Social widget
 SOCIAL = (('Github', 'https://github.com/nullne'),
