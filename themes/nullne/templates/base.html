@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
+	<meta name="description" content="">
+	<meta name="author" content="{{ AUTHOR }}">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="{{ SITEURL }}/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="{{ SITEURL }}/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="{{ SITEURL }}/theme/local.css" rel="stylesheet">
+	<link href="{{ SITEURL }}/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	{% if FEED_ALL_ATOM %}
+	<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+	{% endif %}
+
+	{% if FEED_ATOM %}
+        <link href="{{ FEED_ATOM }}" rel="alternate" title="{{ SITENAME }}" type="application/atom+xml">
+	{% endif %}
+
+	{% if FEED_ALL_RSS %}
+	<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+	{% endif %}
+
+	{% if FEED_RSS %}
+        <link href="{{ FEED_RSS }}" rel="alternate" title="{{ SITENAME }}" type="application/rss+xml">
+	{% endif %}
+
+	{% include "analytics.html" %}
+	{% include "disqus.html" %}
+</head>
+<body>
+	{% include "facebook.html" %}
+	{% include "github.html" %}
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="{{ SITEURL }}/">{{ SITENAME }}</a>
+			<ul class="nav">
+				{% for title, link in MENUITEMS %}
+					<li><a href="{{ link }}">{{ title }}</a></li>
+				{% endfor %}
+				{% if DISPLAY_PAGES_ON_MENU %}
+					{% for page in PAGES %}
+						<li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+					{% endfor %}
+				{% endif %}
+				{% if DISPLAY_CATEGORIES_ON_MENU %}
+				{% for cat, null in categories %}
+					<li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+				{% endfor %}
+				{% endif %}
+			</ul>
+            <div class="nav-collapse collapse">
+                <form class="navbar-search pull-right">
+                    <input type="text" class="search-query" placeholder="Search">
+                </form>
+            </div>
+		</div>
+	  </div>
+	</div>
+
+    <div class="wrapper">
+
+    <div class="content-wrapper container-fluid">
+        <div class="content fixed-head-top">
+            {% block indextitle %}
+            <!--
+            <div class="page-header">
+                <h1>{% block title %} {{ self.windowtitle() }} {% endblock %}</h1>
+            </div>
+            -->
+            {% endblock %}
+            {% block content %}{% endblock %}
+        </div>
+        <div class="push"></div>
+    </div><!--container-fluid-->
+
+    <footer class="">
+        <div class="container">
+            <div class="row">
+                <div class="span4">
+                    <h3>Site</h3>
+                    <ul>
+                        <li><a href="{{ SITEURL }}/tags.html">Tags</a></li>
+                        <li><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+                        <li><a href="{{ SITEURL }}/rss.html">RSS</a></li>
+                    </ul>
+                </div>
+                <div class="span4">
+                    <h3>Category</h3>
+                    <ul>
+                        {% for category, articles in categories %}
+                        <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="span4">
+                    <h3>Blogroll</h3>
+                    <ul>
+                        {% for name, link in LINKS %}
+                        <li><a href="{{ link }}">{{ name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="social span4">
+                    <h3>Social</h3>
+                    <ul style="list-style:none">
+                        {% for name, link in SOCIAL %}
+                        <li><a href="{{ link }}">{{ name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <p class="copyleft">&copy; {{ AUTHOR }} 2013-2014</p>
+        </div>
+    </footer>
+    </div><!--wrapper-->
+</body>
+</html>

@@ -4,11 +4,20 @@ from __future__ import unicode_literals
 
 AUTHOR = u'nullne'
 SITENAME = u'NULLNE'
-SITEURL = ''
+SITEURL = 'nullne.com'
+THEME = 'themes/nullne'
 
 PATH = 'content'
+STATIC_PATHS = ['downloads']
+#ARTICLE_PATHS = ['blog']
+ARTICLE_SAVE_AS = '{category}/{date:%Y}/{slug}.html'
+ARTICLE_URL = '{category}/{date:%Y}/{slug}.html'
+PAGE_SAVE_AS = '{slug}.html'
+PAGE_URL = '{slug}.html'
+DRAFT_SAVE_AS = 'draft/{slug}.html'
+DRAFT_URL = 'draft/{slug}.html'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = u'en'
 
@@ -20,14 +29,17 @@ TRANSLATION_FEED_ATOM = None
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+         )
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('Github', 'https://github.com/nullne'),
+        ('Weibo', 'http://weibo.com/nullne'),)
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+DISPLAY_PAGES_ON_MENU = True
+USE_FOLDER_AS_CATEGORY = True
+DISPLAY_CATEGORIES_ON_MENU = False
