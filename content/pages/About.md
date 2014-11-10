@@ -3,4 +3,5 @@ Slug: about
 Authors: nullne 
 Summary: Short version for index and feeds
 
-This is the content of my super blog post.
+[简历]({filename}/million/resume-ch.pdf)
+[Resume]({filename}/million/resume-en.pdf)
