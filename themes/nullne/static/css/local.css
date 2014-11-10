@@ -88,3 +88,4 @@ div.highlight pre {
 .social a[href*='careers.stackoverflow.com']:before {content: url('../icons/careers.stackoverflow.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='twitter.com']:before {content: url('../icons/twitter.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='weibo.com']:before {content: url('../icons/weibo.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='douban.com']:before {content: url('../icons/douban.jpg'); margin-right: 2px; vertical-align: -3px;}
