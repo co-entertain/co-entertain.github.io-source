@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'nullne'
 SITENAME = u'NULLNE'
-SITEURL = 'nullne.com'
+SITEURL = ''
 THEME = 'themes/nullne'
 
 PATH = 'content'
