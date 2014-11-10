@@ -8,8 +8,8 @@ SITEURL = ''
 #GITHUB_URL = 'https://github.com/nullne'
 
 THEME = 'themes/nullne'
-PLUGINS_PATH ='plugins'
-PLUGINS = ['tipue_search']
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["tipue_search"]
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'search'))
 
 PATH = 'content'
