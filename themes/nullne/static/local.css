@@ -1,3 +1,8 @@
+#comments {
+    text-align:center;
+    width:100%;
+    background-color:rgb(97, 83, 83);
+}
 footer {
     position:relative;
     height:179px;

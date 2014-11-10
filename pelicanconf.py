@@ -5,9 +5,10 @@ from __future__ import unicode_literals
 AUTHOR = u'nullne'
 SITENAME = u'NULLNE'
 SITEURL = ''
+#GITHUB_URL = 'https://github.com/nullne'
 
 THEME = 'themes/nullne'
-PLUGIN_PATH ='plugins'
+PLUGINS_PATH ='plugins'
 PLUGINS = ['tipue_search']
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'search'))
 

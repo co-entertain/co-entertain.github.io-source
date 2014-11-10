@@ -9,7 +9,10 @@
 		<div>{{ article.content }}</div>
 
 		<div style="margin-top:20px" class="well small">{% include "metadata.html" %}</div>
-
+	</div>
+{% endblock %}
+{% block footer %}
+<div style="text-align:center;background-color:rgb(97, 83, 83);width:100%;height:auto">
         <div id="comments"></div>
         <script src="https://apis.google.com/js/plusone.js"></script>
         <script>
@@ -29,15 +32,6 @@
         });
         </script>
         -->
-
-        {% if DISQUS_SITENAME or FACEBOOK_APPID or TWITTER_USERNAME %}
-		<div>
-			<h2>Comments</h2>
-		 	{% include "twitter.html" %}
-			{% if DISQUS_SITENAME %}<div id="disqus_thread"></div>{% endif %}
-			{% if FACEBOOK_APPID %}<div class="fb-comments" data-href="{{ FQ_SITEURL }}/{{ article.url }}" data-num-posts="10" data-width="760"></div>{% endif %}
-		<div>
-        {% endif %}
-	</div>
+</div>
 {% endblock %}
 
