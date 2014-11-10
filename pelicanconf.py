@@ -6,6 +6,7 @@ AUTHOR = u'nullne'
 SITENAME = u'NULLNE'
 SITEURL = ''
 #GITHUB_URL = 'https://github.com/nullne'
+GOOGLE_ANALYTICS = "UA-56583262-1"
 
 THEME = 'themes/nullne'
 PLUGIN_PATHS = ["plugins"]
