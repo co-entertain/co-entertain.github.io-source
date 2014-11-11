@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="nullne" />
+        <meta name="copyright" content="nullne" />
+
+<meta name="keywords" content="学习笔记, python, webcrew, learning note, " />
+        <title>教务系统快速教师评估  · nullne's time space
+</title>
+        <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="http://nullne.com/theme/css/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="http://nullne.com/theme/css/solarizedlight.css" media="screen">
+        <link rel="shortcut icon" href="http://nullne.com/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="http://nullne.com/theme/images/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="http://nullne.com/theme/images/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="http://nullne.com/theme/images/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="http://nullne.com/theme/images/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="http://nullne.com/theme/images/apple-touch-icon-144x144.png" />
+        <link rel="icon" href="http://nullne.com/theme/images/apple-touch-icon-144x144.png" />
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'nullne']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="http://nullne.com/"><span class=site-name>nullne's time space</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="http://nullne.com">Home</a></li>
+                            <li ><a href="http://nullne.com/categories.html">Categories</a></li>
+                            <li ><a href="http://nullne.com/tags.html">Tags</a></li>
+                            <li ><a href="http://nullne.com/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="http://nullne.com/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page_header span10 offset2">
+    <h1><a href="http://nullne.com/autoEvaluate.html"> 教务系统快速教师评估  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            <h3>楔子</h3>
+<p><em>也是因为学习用Python写爬虫的缘故，昨天看到论坛上有一篇帖子介绍如何实现教务系统快速评估教师，一下子就有了兴趣。本来以为不怎么难的，想着一个下午就搞定，结果。。。<br />
+事实证明，基本功还是不够</em>  </p>
+<h3>知识储备</h3>
+<ul>
+<li>
+<h4>encode</h4>
+  编码方式这个东西每次出问题了才去搜搜，下一次又遇到又出错。所以这次我索性把他弄个明白。<br />
+  首先理清楚这两个概念:  <ul>
+<li>系统编码方式</li>
+<li>代码内部编码方式  </li>
+</ul>
+</li>
+</ul>
+<p>*nix平台上输入 locale 即可以得到其系统编码方式，在代码（python）上面标注<code># -*- coding:UTF-8 -*-</code>即标明代码内部编码方式为UTF-8.就相当于两个世界的语言一样，彼此是无法沟通的。这时候就出现了一个大家都懂的公共语言--unicode,他们之间的翻译是基于这个编码方式的
+  看下面这个例子:  </p>
+<div class="highlight"><pre><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span> <span class="n">unicode_str</span> <span class="o">=</span> <span class="n">u</span><span class="s">&quot;吻得太逼真&quot;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span> <span class="n">unicode_str</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span> <span class="n">u</span><span class="err">&#39;\</span><span class="n">u543b</span><span class="err">\</span><span class="n">u5f97</span><span class="err">\</span><span class="n">u592a</span><span class="err">\</span><span class="n">u903c</span><span class="err">\</span><span class="n">u771f</span><span class="err">&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">:</span> <span class="n">utf8_str</span> <span class="o">=</span> <span class="n">unicode_str</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="err">&#39;</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">:</span> <span class="n">utf8_str</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">:</span> <span class="err">&#39;\</span><span class="n">xe5</span><span class="err">\</span><span class="n">x90</span><span class="err">\</span><span class="n">xbb</span><span class="err">\</span><span class="n">xe5</span><span class="err">\</span><span class="n">xbe</span><span class="err">\</span><span class="n">x97</span><span class="err">\</span><span class="n">xe5</span><span class="err">\</span><span class="n">xa4</span><span class="err">\</span><span class="n">xaa</span><span class="err">\</span><span class="n">xe9</span><span class="err">\</span><span class="n">x80</span><span class="err">\</span><span class="n">xbc</span><span class="err">\</span><span class="n">xe7</span><span class="err">\</span><span class="n">x9c</span><span class="err">\</span><span class="n">x9f</span><span class="err">&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">:</span> <span class="n">gbk_str</span> <span class="o">=</span> <span class="n">unicode_str</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="err">&#39;</span><span class="n">GBK</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">:</span> <span class="n">gbk_str</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">:</span> <span class="err">&#39;\</span><span class="n">xce</span><span class="err">\</span><span class="n">xc7</span><span class="err">\</span><span class="n">xb5</span><span class="err">\</span><span class="n">xc3</span><span class="err">\</span><span class="n">xcc</span><span class="err">\</span><span class="n">xab</span><span class="err">\</span><span class="n">xb1</span><span class="err">\</span><span class="n">xc6</span><span class="err">\</span><span class="n">xd5</span><span class="err">\</span><span class="n">xe6</span><span class="err">&#39;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">:</span> <span class="n">print</span> <span class="n">utf8_str</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">:</span> <span class="err">吻得太逼真</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">:</span> <span class="n">print</span> <span class="n">gbk_str</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">:</span> <span class="err">�ǵ�����</span>
+</pre></div>
+
+
+<p>很容易就能明白对不？utf8_str和gbk_str都是基于unicode_str编码的，直接输变量名得到的OUT是repr，print得到的是str。简单的说repr显示的是正式字符表达式串，而str采用非正式字符串表达式。最后一行出现乱码可以这么理解，系统编码方式是UTF-8，他得到一串以GBK编码的字符时，当然就不明白如何正确显示，所以就乱码掉了。
+再看一个代码中的例子：  </p>
+<div class="highlight"><pre><span class="n">comment</span> <span class="o">=</span> <span class="n">raw_input</span><span class="p">(</span><span class="s">&quot;COMMENT: &quot;</span><span class="p">)</span>
+<span class="n">comment</span> <span class="o">=</span> <span class="n">comment</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">sys_encode</span><span class="p">)</span>  
+</pre></div>
+
+
+<div class="highlight"><pre><span class="n">vote</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="err">&#39;</span><span class="n">http</span><span class="o">:</span><span class="c1">//10.3.240.70/jxpgXsAction.do?oper=wjpg&#39;, data=post_data, cookies=login.cookies, headers=headers)</span>
+<span class="n">out</span> <span class="o">=</span>  <span class="n">vote</span><span class="p">.</span><span class="n">content</span>
+<span class="k">if</span> <span class="n">str</span><span class="p">(</span><span class="n">out</span><span class="p">).</span><span class="n">find</span><span class="p">(</span><span class="err">&#39;成功&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">:</span>
+    <span class="n">print</span> <span class="s">&quot;---- success on &quot;</span> <span class="o">+</span> <span class="n">i</span><span class="p">[</span><span class="err">&#39;</span><span class="n">bprm</span><span class="err">&#39;</span><span class="p">]</span>
+<span class="nl">else:</span>
+    <span class="n">print</span> <span class="s">&quot;---- fail on &quot;</span> <span class="o">+</span> <span class="n">i</span><span class="p">[</span><span class="err">&#39;</span><span class="n">bprm</span><span class="err">&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>代码编码方式是GBK, 所以“成功”字样的编码方式就是GBK,网页返回的也是GBK，所以在搜索的时候就不用做编码转换了。这就是为什么我要把代码的编码方式改为GBK。但是因为系统的编码方式是UTF-8，所以在和系统做交互的时候一定要注意编码的转换，这样才不会错。<br />
+所以总结哈，然是牵扯到两个环境中的文本交互，就一定需要注意编码方式的问题，比如说刚才提到的系统编码和代码自身编码不同，还有网页编码和代码编码。值得一提的是不能直接把unicode编码的东西直接POST给网页，这样也可能会出错的,因为unicode本身也只是一种编码方式<br />
+这篇写的非常专业，如果需要的话可以过去爽爽--&gt;
+<a href="http://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html">字符编码详解</a> </p>
+<ul>
+<li>
+<h4>urllib urllib2 VS requests</h4>
+  urllib,urlli2 其实我是认真去看了，基本用法也了解了。但是每次出错之后调试都搞不明白。
+  强烈推荐使用<em><a href="http://docs.python-requests.org/en/latest/user/quickstart" title="官方教程">requests</a></em>，因为官方库虽然功能完善强大但是太复杂了，完全不符合人类的思维方式。看到requests后我果断放弃深入了解官方库了。
+  关于二者的学习网上很多教程，这儿列出来我看过的觉得不错的  <ul>
+<li><a href="http://www.pythonforbeginners.com/python-on-the-web/how-to-use-urllib2-in-python/">urllib,urllib2的入门学习</a>  </li>
+<li><a href="http://docs.python-requests.org/en/latest/user/quickstart" title="官方教程">requests的官方教程，有easy模式和hard模式</a>  </li>
+</ul>
+</li>
+<li>
+<h4><a href="http://www.tcpdump.org/">tcpdump</a>, <a href="http://www.wireshark.org/download.html">wireshark</a></h4>
+<p>这两个工具不太熟，是因为在调试过程有的问题不好解决，IRC上有人推荐用这个查看本地发送的包。</p>
+</li>
+<li>
+<h4>firefox,firebug,<a href="https://addons.mozilla.org/en-US/firefox/addon/tamper-data/">Tamper Data</a>,<a href="https://addons.mozilla.org/zh-cn/firefox/addon/httpfox/">HttpFox</a></h4>
+<p>firefox的这些插件功能是再强大不过了，推荐了解学习
+Tamp Data可以在发送每一个请求的时候截获然后做修改再发送，这个功能简直炸天</p>
+</li>
+</ul>
+<h3>FIGHTING</h3>
+<p>大概明白了这些东西之后就能够开始战斗了。整个功能说白了就是模拟发送POST请求，但是发送的内容需要自己在浏览器端先观察好，对于一些比较苛刻的情况还需要修改HEADERS等。代码流程就是实际操作的流程，中间有的步骤不能省去，可能是因为服务器端的验证吧。详情就参见代码：<a href="https://github.com/nullne/buptjw_auto_evaluate">code here</a></p>
+<h3>总结</h3>
+<p><em>但行好事，莫问前程</em></p>
+<section>
+<p id="comment-message">nice to leave your comments </p>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="http://nullne.com/autoEvaluate.html#disqus_thread">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'nullne';
+        var disqus_identifier = 'http://nullne.com/autoEvaluate.html';
+    var disqus_url = 'http://nullne.com/autoEvaluate.html';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+            <aside>
+            <hr/>
+            <nav>
+            <ul class="articles_timeline">
+ 
+ 
+                <li class="previous_article">« <a href="http://nullne.com/firstBLog.html" title="Previous: 起航 - 以此纪念我的第一篇博文">起航 <small>以此纪念我的第一篇博文</small></a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+ 
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2014-05-31T11:20:00">May 31, 2014</time>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#learning-note-ref">learning note</a> 
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article"> 
+                <li><a href="/tags.html#python-ref">python
+                    <span>1</span>
+</a></li>
+                <li><a href="/tags.html#webcrew-ref">webcrew
+                    <span>1</span>
+</a></li>
+                <li><a href="/tags.html#学习笔记-ref">学习笔记
+                    <span>1</span>
+</a></li>
+            </ul>
+
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'nullne';
+
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+        <script  language="javascript" type="text/javascript">
+            function uncollapse() {
+                var hash_str = window.location.hash;
+                if (window.location.hash.match(/^#comment-\d+$/))
+                {
+                    var hash_str = '#disqus_thread';
+                }
+                $(hash_str).collapse({
+                    toggle: true
+                    })
+            }
+        </script>
+
+        <script type="text/javascript" language="JavaScript">
+            uncollapse(); 
+        </script>
+    </body>
+</html>

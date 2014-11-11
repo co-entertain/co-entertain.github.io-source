@@ -14,7 +14,7 @@ PLUGINS = ["tipue_search"]
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'search'))
 
 PATH = 'content'
-STATIC_PATHS = ['million']
+STATIC_PATHS = ['million','archive']
 #ARTICLE_PATHS = ['blog']
 ARTICLE_SAVE_AS = '{category}/{date:%Y}/{slug}.html'
 ARTICLE_URL = '{category}/{date:%Y}/{slug}.html'
