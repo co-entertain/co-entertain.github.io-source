@@ -29,9 +29,9 @@ git commit -m "love you forever"
 git push
 ```
     
-    Done! 你的本儿在天之灵，看到以后应该就会安息了。
+Done! 你的本儿在天之灵，看到以后应该就会安息了。
 
-    废话不说了，按照[Zonca](http://zonca.github.io)的[教程](http://zonca.github.io/2013/09/automatically-build-pelican-and-publish-to-github-pages.html)一步一步下来基本没有错误，但是当时我走了很多弯路，自作聪明的改了一些脚本。如果遇到什么问题欢迎讨论。
+废话不说了，按照[Zonca](http://zonca.github.io)的[教程](http://zonca.github.io/2013/09/automatically-build-pelican-and-publish-to-github-pages.html)一步一步下来基本没有错误，但是当时我走了很多弯路，自作聪明的改了一些脚本。如果遇到什么问题欢迎讨论。
 
 - [**Tipue**](http://www.tipue.com/)
 >Tipue Search is a site search engine jQuery plugin. It's free, open source and responsive.

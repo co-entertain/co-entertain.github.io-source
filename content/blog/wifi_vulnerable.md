@@ -8,10 +8,13 @@ Authors: nullne
 Summary:
 _很久以前看过一篇关于WIFI脆弱性的[介绍](http://fex.baidu.com/blog/2014/04/traffic-hijack/)(找了好久终于被我找到了)，其中有一部分试讲由于本身协议的弱点，相同 ssid 的热点会被合并为同一个，至于用户最终连接哪个热点取决于他所能接收到的信号强度。不知道此刻各位看官脑洞有没有大开？_
 _俗话说杀生不如宰熟，所以直接就向学校 ap 下手了。提前声明几个全局变量：_
-````
+
+```
 ssid: NICESHOT
 os： ubuntu
 ```
+
+
 ###简单部署
 ####用 hostapd 建立热点
 >“**hostapd** is a user space daemon for access point and authentication servers. “
