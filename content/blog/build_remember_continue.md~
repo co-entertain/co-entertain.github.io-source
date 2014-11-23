@@ -21,15 +21,11 @@ Travis CI's build environment provides different runtimes for different language
     使用**Pelican**的常规思路是在本地写好**md**或者其他格式的文件，然后`make publish`，当然这是集成命令，分解开就是先生成静态页面然后PUSH到**Git page**。看着似乎很简单，这是建立在首先配置好你的本地环境的基础上，并且每次换一台机器之后你都需要重新配置你的环境。配环境这事儿我只能呵呵了，那么多的的平台配法儿都不太一样。
  
     但是，当你遇到**Travis CI**一切就都不一样了。你只要一次性配置完成，将你的source文件PUSH到某一个github仓库。之后的事情就容易多了，按最坏的情况来说，你的本撒手人寰了（哭瞎），你写了一篇文章纪念。以最快的速度把舍友的本儿扯过来.
-```shell
-git clone git://github.com/username/bri.github.io-source
-mv remember.md path/to/content/
-git add *
-git commit -m "love you forever"
-git push
-```
-    
-    Done! 你的本儿在天之灵，看到以后应该就会安息了。
+    :::python
+    pass
+
+   
+     Done! 你的本儿在天之灵，看到以后应该就会安息了。
 
     废话不说了，按照[Zonca](http://zonca.github.io)的[教程](http://zonca.github.io/2013/09/automatically-build-pelican-and-publish-to-github-pages.html)一步一步下来基本没有错误，但是当时我走了很多弯路，自作聪明的改了一些脚本。如果遇到什么问题欢迎讨论。
 
