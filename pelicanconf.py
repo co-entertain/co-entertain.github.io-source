@@ -34,7 +34,7 @@ TRANSLATION_FEED_ATOM = None
 
 # Blogroll
 LINKS = (('Zonca', 'http://zonca.github.io/'),
-        ('Moparx', 'http://.moparx.com/'),
+        ('Moparx', 'http://moparx.com/'),
         ('Friparia', 'http://blog.friparia.com/'),
         )
 
@@ -53,4 +53,8 @@ DISPLAY_PAGES_ON_MENU = True
 USE_FOLDER_AS_CATEGORY = True
 DISPLAY_CATEGORIES_ON_MENU = False
 
+#ARTICLE_ORDER_BY = 'date'
+#PAGE_ORDER_BY = 'date'
+REVERSE_CATEGORY_ORDER = True
+NEWEST_FIRST_ARCHIVES = True
 ARTICLE_EXCLUDES = ['archive']
