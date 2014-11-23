@@ -9,7 +9,7 @@ echo -e "$VARNAME"
 if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     echo -e "Starting to deploy to Github Pages\n"
     if [ "$TRAVIS" == "true" ]; then
-        git config --global user.email "co.nullne@gmail.com"
+        git config --global user.email "co.crary@gmail.com"
         git config --global user.name "nullne"
     fi
     #using token clone gh-pages branch
@@ -19,7 +19,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     rsync -rv --exclude=.git  ../$PELICAN_OUTPUT_FOLDER/* .
     #add, commit and push files
     git add -f .
-    git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
+    git commit -m "春宵一刻值$TRAVIS_BUILD_NUMBER千金"
     git push -fq origin $BRANCH > /dev/null
     echo -e "Deploy completed\n"
 fi

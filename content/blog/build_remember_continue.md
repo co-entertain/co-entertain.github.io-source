@@ -8,7 +8,7 @@ Authors: nullne
 Summary: 
 *逛了一圈论坛博客神马的发现好多人也都在写点东西纪念今天*
 
-距离上一次写东西已经很久了，主要原因是因为Air跪了！幸灾乐祸的主儿可以去看看[原微](http://weibo.com/2356978633/B7CNpb52w?type=comment#_rnd1415671779372)，那可是目前自己微博上最火的一个。
+距离上一次写东西已经很久了，主要原因是因为Air跪了！幸灾乐祸的主儿可以去看看[原微](http://weibo.com/2356978633/B7CNpb52w?type=comment#_rnd1415671779372)，那可是目前自己微博上最火的一个
 
 ![Alt text](http://ww2.sinaimg.cn/large/8c7ca3c9jw1eh3fj6ouc4j21kw23u1kx.jpg)
 
