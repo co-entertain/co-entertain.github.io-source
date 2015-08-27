@@ -1,3 +1,10 @@
+title:SSH学习笔记之--SSH 配置技巧 
+Date: 2015-08-27 10:20
+Modified: 2015-08-27 10:20
+Category: SSH 
+Tags: SSH, config 
+Slug: ssh-config-tips 
+Authors: nullne 
 ###SSH配置技巧
 #####配置主机别名, 省略用户名
 修改（创建如果不存在）~/.ssh/config,  增加下面条目(可添加多个)

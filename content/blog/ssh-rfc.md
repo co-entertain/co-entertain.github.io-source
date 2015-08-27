@@ -1,3 +1,10 @@
+title:SSH学习笔记之--SSH RFC 
+Date: 2015-08-27 10:20
+Modified: 2015-08-27 10:20
+Category: SSH 
+Tags: SSH,RFC 
+Slug: ssh-RFC 
+Authors: nullne 
 ###SSH RFC
 #### [The Secure Shell (SSH) Protocol Architecture](http://www.rfc-base.org/txt/rfc-4251.txt)
 >Secure Shell (SSH) is a protocol for secure remote login and other secure network services over an insecure network.  It consists of three major components:
