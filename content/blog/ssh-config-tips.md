@@ -24,48 +24,48 @@ ssh cc
 #####配置密钥登录
 1. 生成私钥公钥对
 
-```
-	$ ssh-keygen -t rsa                                                    #生成RSA类型的密钥对  
-	Generating public/private rsa key pair.  
-	Enter file in which to save the key (/home/yule/.ssh/id_rsa):          #输入密钥存放位置，直接回车为默认值  
-	Enter passphrase (empty for no passphrase):                            #输入密钥密码，用来解锁密钥  
-	Enter same passphrase again:  
-	Your identification has been saved in /home/yule/.ssh/id_rsa.  
-	Your public key has been saved in /home/yule/.ssh/id_rsa.pub.  
-	The key fingerprint is:  
-	3c:13:20:5c:80:02:3d:e5:64:44:3e:69:2b:83:b9:d8 yule@client.cc.test  
-	The key's randomart image is:  
-	+--[ RSA 2048]----+  
-	|o. *Ooo          |  
-	|. +=.o .         |  
-	| . .*   .        |  
-	| o . o . .       |  
-	|o o .   S        |  
-	|.o o     o       |  
-	|o E              |  
-	|                 |  
-	|                 |  
-	+-----------------+  
-```  
+        :::bash
+        $ ssh-keygen -t rsa                                                    #生成RSA类型的密钥对  
+        Generating public/private rsa key pair.  
+        Enter file in which to save the key (/home/yule/.ssh/id_rsa):          #输入密钥存放位置，直接回车为默认值  
+        Enter passphrase (empty for no passphrase):                            #输入密钥密码，用来解锁密钥  
+        Enter same passphrase again:  
+        Your identification has been saved in /home/yule/.ssh/id_rsa.  
+        Your public key has been saved in /home/yule/.ssh/id_rsa.pub.  
+        The key fingerprint is:  
+        3c:13:20:5c:80:02:3d:e5:64:44:3e:69:2b:83:b9:d8 yule@client.cc.test  
+        The key's randomart image is:  
+        +--[ RSA 2048]----+  
+        |o. *Ooo          |  
+        |. +=.o .         |  
+        | . .*   .        |  
+        | o . o . .       |  
+        |o o .   S        |  
+        |.o o     o       |  
+        |o E              |  
+        |                 |  
+        |                 |  
+        +-----------------+  
 
 2. 将公钥拷贝到需要ssh登录的服务器
 
 	如果当前机器有`ssh-copy-id`命令的话将会非常方便:  
-	`ssh-copy-id [-i [identity_file]] [user@]machine`  
+
+        :::shell
+        ssh-copy-id [identity_file] [user@]machine  
 	
 	否则需要手动拷贝到目标机器上面，然后把内容添加到目标机器的*$HOME/.ssh/authorized_keys*文件内：  
 	
-	```
-	scp ~/.ssh/id_rsa.pub [usr@]machine:/tmp
-	ssh [usr@]machine
-	cat /tmp/id_rsa.pub >> ~/.ssh/authorized_keys
-	```
+        :::shell
+        scp ~/.ssh/id_rsa.pub [usr@]machine:/tmp
+        ssh [usr@]machine
+        cat /tmp/id_rsa.pub >> ~/.ssh/authorized_keys
 
 3. 修改相关文件权限
 	
-	ssh对于文件权限非常敏感，通常无法通过ssh密钥登录很有可能就是因为文件权限出错。注意下面的权限为目标机器的权限。
-	1. ~/.ssh 目录权限为700: `chmod 700 ~/.ssh`
-	2. ~/.ssh/authorized_keys 文件权限为600: `chomod 600 ~/.ssh/authorized_keys`
+	ssh对于文件权限非常敏感，通常无法通过ssh密钥登录很有可能就是因为文件权限出错。注意下面的权限为目标机器的权限。  
+	1. ~/.ssh 目录权限为700: `chmod 700 ~/.ssh`  
+	2. ~/.ssh/authorized_keys 文件权限为600: `chomod 600 ~/.ssh/authorized_keys`  
 
 这样不出意外的话，此时就可以使用密钥（无需输入密码）登录远端服务器了。
 ####使用Agent管理密钥
