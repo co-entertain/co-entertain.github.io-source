@@ -79,4 +79,3 @@ Authors: nullne
 		  
 这下明白为什么叫agent forwarding(转发)了吧，就是所有中间节点的sshd和ssh都充当了数据转发的角色，一直将私钥操作的request转发到了本机的agent，然后再将agent的response原路返回。  
 
-####SSH proxy  

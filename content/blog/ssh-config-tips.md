@@ -1,10 +1,10 @@
-title:SSH学习笔记之--SSH 配置技巧 
-Date: 2015-08-27 10:20
-Modified: 2015-08-27 10:20
-Category: SSH 
-Tags: SSH, config 
-Slug: ssh-config-tips 
-Authors: nullne 
+title:SSH学习笔记之--SSH 配置技巧  
+Date: 2015-08-27 10:20  
+Modified: 2015-08-27 10:20  
+Category: SSH   
+Tags: SSH, config  
+Slug: ssh-config-tips  
+Authors: nullne  
 ###SSH配置技巧
 #####配置主机别名, 省略用户名
 修改（创建如果不存在）~/.ssh/config,  增加下面条目(可添加多个)
@@ -25,28 +25,28 @@ ssh cc
 1. 生成私钥公钥对
 
 	```
-	$ ssh-keygen -t rsa                                                    #生成RSA类型的密钥对
-	Generating public/private rsa key pair.
-	Enter file in which to save the key (/home/yule/.ssh/id_rsa):          #输入密钥存放位置，直接回车为默认值
-	Enter passphrase (empty for no passphrase):                            #输入密钥密码，用来解锁密钥
-	Enter same passphrase again:
-	Your identification has been saved in /home/yule/.ssh/id_rsa.
-	Your public key has been saved in /home/yule/.ssh/id_rsa.pub.
-	The key fingerprint is:
-	3c:13:20:5c:80:02:3d:e5:64:44:3e:69:2b:83:b9:d8 yule@client.cc.test
-	The key's randomart image is:
-	+--[ RSA 2048]----+
-	|o. *Ooo          |
-	|. +=.o .         |
-	| . .*   .        |
-	| o . o . .       |
-	|o o .   S        |
-	|.o o     o       |
-	|o E              |
-	|                 |
-	|                 |
-	+-----------------+
-	```
+	$ ssh-keygen -t rsa                                                    #生成RSA类型的密钥对  
+	Generating public/private rsa key pair.  
+	Enter file in which to save the key (/home/yule/.ssh/id_rsa):          #输入密钥存放位置，直接回车为默认值  
+	Enter passphrase (empty for no passphrase):                            #输入密钥密码，用来解锁密钥  
+	Enter same passphrase again:  
+	Your identification has been saved in /home/yule/.ssh/id_rsa.  
+	Your public key has been saved in /home/yule/.ssh/id_rsa.pub.  
+	The key fingerprint is:  
+	3c:13:20:5c:80:02:3d:e5:64:44:3e:69:2b:83:b9:d8 yule@client.cc.test  
+	The key's randomart image is:  
+	+--[ RSA 2048]----+  
+	|o. *Ooo          |  
+	|. +=.o .         |  
+	| . .*   .        |  
+	| o . o . .       |  
+	|o o .   S        |  
+	|.o o     o       |  
+	|o E              |  
+	|                 |  
+	|                 |  
+	+-----------------+  
+	```  
 
 2. 将公钥拷贝到需要ssh登录的服务器
 
@@ -56,9 +56,9 @@ ssh cc
 	否则需要手动拷贝到目标机器上面，然后把内容添加到目标机器的*$HOME/.ssh/authorized_keys*文件内：  
 	
 	```
-		scp ~/.ssh/id_rsa.pub [usr@]machine:/tmp
-		ssh [usr@]machine
-		cat /tmp/id_rsa.pub >> ~/.ssh/authorized_keys
+	scp ~/.ssh/id_rsa.pub [usr@]machine:/tmp
+	ssh [usr@]machine
+	cat /tmp/id_rsa.pub >> ~/.ssh/authorized_keys
 	```
 
 3. 修改相关文件权限
