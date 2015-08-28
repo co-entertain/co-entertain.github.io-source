@@ -24,7 +24,7 @@ ssh cc
 #####配置密钥登录
 1. 生成私钥公钥对
 
-	```
+```
 	$ ssh-keygen -t rsa                                                    #生成RSA类型的密钥对  
 	Generating public/private rsa key pair.  
 	Enter file in which to save the key (/home/yule/.ssh/id_rsa):          #输入密钥存放位置，直接回车为默认值  
@@ -46,7 +46,7 @@ ssh cc
 	|                 |  
 	|                 |  
 	+-----------------+  
-	```  
+```  
 
 2. 将公钥拷贝到需要ssh登录的服务器
 

@@ -23,6 +23,7 @@ PAGE_URL = '{slug}.html'
 DRAFT_SAVE_AS = 'draft/{slug}.html'
 DRAFT_URL = 'draft/{slug}.html'
 
+SUMMARY_MAX_LENGTH = 10
 TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = u'en'
@@ -44,17 +45,18 @@ SOCIAL = (('Github', 'https://github.com/nullne'),
         ('豆瓣', 'http://www.douban.com/people/nullnes/'),
         ('微博', 'http://weibo.com/nullne'),)
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 100
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
 DISPLAY_PAGES_ON_MENU = True
 USE_FOLDER_AS_CATEGORY = True
-DISPLAY_CATEGORIES_ON_MENU = False
+DISPLAY_CATEGORIES_ON_MENU = True
 
 #ARTICLE_ORDER_BY = 'date'
 #PAGE_ORDER_BY = 'date'
 REVERSE_CATEGORY_ORDER = True
 NEWEST_FIRST_ARCHIVES = True
 ARTICLE_EXCLUDES = ['archive']
+PYGMENTS_RST_OPTIONS = {'classprefix': 'pgcss', 'linenos': 'table'}

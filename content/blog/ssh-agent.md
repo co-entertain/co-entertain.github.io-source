@@ -40,7 +40,7 @@ ssh-add [-i file]    #不指定文件的话默认从~/.ssh/id_rsa读取
 有关ssh-agent的缺省设置的另外一个问题是它同cron作业不兼容。由于cron作业是cron进程启动的，这些作业无法从它们的环境中继承SSH_AUTH_SOCK变量，因而也无从知道ssh-agent进程正在运行以及如何同它联系。事实证明这个问题也是可以修补的。
 我们在 /etc/profile.d下面新建一个配置文件ssh-agentsh：
 
-	```
+```
 	#!/bin/sh
 
 	if [ -f ~/.agent.env ]; then
@@ -55,7 +55,7 @@ ssh-add [-i file]    #不指定文件的话默认从~/.ssh/id_rsa读取
 	eval `ssh-agent |tee ~/.agent.env`
 	ssh-add
 	fi
-	```
+```
 	
 ####安全问题
 ssh-agent本身不会导致安全性问题，但是因为其将私钥存放在内存中，如果目标机器的admin用户不可信赖，很有可能导致用户密钥信息泄露。
