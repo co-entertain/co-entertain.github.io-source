@@ -13,6 +13,7 @@
 
     <script src="{{ SITEURL }}/theme/js/jquery-2.1.1.min.js"></script>
     <script src="{{ SITEURL }}/theme/js/bootstrap.min.js"></script>
+    <script src="{{ SITEURL }}/theme/js/project.js"></script>
 
 	<!-- Styles -->
     <link rel="shortcut icon" href="{{ SITEURL }}/theme/img/icons/fav.ico" >
@@ -46,6 +47,10 @@
 <body>
 	{% include "facebook.html" %}
 	{% include "github.html" %}
+
+<div id="protect" style="text-align:center;width:100%;height:100%;z-index:1000;position:absolute;background-color:black">
+        <input style="margin-top:300px" type="password" id="password"></input>
+</div>
 
 <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
   <div class="container-fluid">
