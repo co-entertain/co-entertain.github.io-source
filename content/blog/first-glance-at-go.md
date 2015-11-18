@@ -1,4 +1,4 @@
-title:Golang
+title:Golang 初学
 Date: 2015-07-31 20:00
 Modified: 2015-07-31 20:00
 Category: Golang
