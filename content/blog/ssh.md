@@ -1,8 +1,8 @@
 title:SSH学习笔记  
 Date: 2015-08-28 10:20  
 Modified: 2015-08-28 10:20  
-Category: SSH   
 Tags: SSH  
+Category: 技术改变生活 
 Slug: learning-ssh  
 Authors: nullne  
 ####SSH 学习笔记

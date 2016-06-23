@@ -1,7 +1,7 @@
 title:WIFI 热点欺骗
 Date: 2014-11-23 15:21
 Modified: 2014-11-23 15:21
-Category: web
+Category: 技术改变生活 
 Tags: WIFI, Linux
 Slug: real-attack-show-wifi-vulnerability
 Authors: nullne

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="author" content="{{ AUTHOR }}">
+
+  <!-- Site Properties -->
+  <link rel="icon" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/favicon.png">
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/main.css">
+  {% if (article and article.photo_gallery) or (articles_page and articles_page.object_list[0].photo_gallery) %}
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/magnific-popup.css">
+  {% endif %}
+  {% block customcss %}
+  {% endblock %}
+
+  {% block background %}
+  <style type="text/css">
+.masthead.segment.bg:after {
+    background-image: url('{{ SITEURL }}/background/homepage.jpg');
+}
+  </style>
+  {% endblock %}
+
+
+  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/jquery-2.1.4.min.js"></script>
+  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/semantic.min.js"></script>
+  {% block customjs %}
+  {% endblock %}
+  <script>
+  $(document)
+    .ready(function() {
+        $('div.search').keypress(function(e) {
+            if(e.which == 13) {
+                var q = $(this).find('input').val()
+                if (q.length !== 0) {
+                    window.location.href = "{{ SITEURL }}/search.html?q=" + q;
+                }
+            }
+        });
+        // fix menu when passed
+        $('.masthead')
+            .visibility({
+                once: false,
+                onBottomPassed: function() {
+                    $('.fixed.menu').transition('fade in');
+                },
+                onBottomPassedReverse: function() {
+                    $('.fixed.menu').transition('fade out');
+                }
+            })
+        ;
+    })
+  ;
+  </script>
+  <!-- Feeds -->
+  {% if FEED_ALL_ATOM %}
+  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+  {% endif %}
+
+  {% if FEED_ATOM %}
+  <link href="{{ FEED_ATOM }}" rel="alternate" title="{{ SITENAME }}" type="application/atom+xml">
+  {% endif %}
+
+  {% if FEED_ALL_RSS %}
+  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+  {% endif %}
+
+  {% if FEED_RSS %}
+  <link href="{{ FEED_RSS }}" rel="alternate" title="{{ SITENAME }}" type="application/rss+xml">
+  {% endif %}
+</head>
+<body>
+
+<!-- Following Menu -->
+<div class="ui top fixed hidden menu">
+  <div class="ui container">
+      <a href="/" class="header item">
+          Home
+      </a>
+      {% for title, link in MENUITEMS %}
+      <a class="item" href="{{ link }}">{{ title }}</a>
+      {% endfor %}
+
+      <!-- pages -->
+      {% if DISPLAY_CATEGORIES_ON_MENU %}
+      {% for cat, null in categories %}
+      <a class="item {% if cat == category %} active{% endif %}" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+      {% endfor %}
+      {% endif %}
+
+      {% if DISPLAY_PAGES_ON_MENU %}
+      {% for page in PAGES %}
+      <a class="item" href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
+      {% endfor %}
+      {% endif %}
+    <div class="right item">
+        <div class="ui small search">
+            <div class="ui icon input">
+                <input class="prompt" type="text" placeholder="Search...">
+                <i class="search icon"></i>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment bg" id="bg">
+
+    <div class="ui container">
+      <div class="ui large secondary inverted menu">
+          <!-- 
+         <a class="toc item">
+           <i class="sidebar icon"></i>
+         </a>
+         -->
+         <a href="/" class="item">
+             Home
+         </a>
+        {% for title, link in MENUITEMS %}
+        <a class="item" href="{{ link }}">{{ title }}</a>
+        {% endfor %}
+
+        <!-- pages -->
+        {% if DISPLAY_CATEGORIES_ON_MENU %}
+        {% for cat, null in categories %}
+        <a class="item {% if cat == category %} active{% endif %}" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+        {% endfor %}
+        {% endif %}
+
+        {% if DISPLAY_PAGES_ON_MENU %}
+        {% for page in PAGES %}
+        <a class="item" href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
+        {% endfor %}
+        {% endif %}
+        <div class="right item">
+            <div class="ui small search">
+                <div class="ui icon input">
+                    <input class="prompt" type="text" placeholder="Search...">
+                    <i class="search icon"></i>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui text container">
+        {% block articletitle %}
+        <h1 class="ui inverted header">
+            不努力怎会感到绝望？
+        </h1>
+        {% endblock %}
+        <h2>Do whatever you want when you want to.</h2>
+    </div>
+
+  </div>
+
+  <div class="ui hidden divider"></div>
+
+  {% block content %}{% endblock %}
+
+  <div class="ui hidden divider"></div>
+
+  {% block footer %}
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">Blogroll</h4>
+          <div class="ui inverted link list">
+              {% for name, link in LINKS %}
+              <a href="{{ link }}" class="item">&nbsp;{{ name }}</a>
+              {% endfor %}
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Social</h4>
+          <div class="ui inverted link list">
+              {% for name, link in SOCIAL %}
+              <a href="{{ link }}" class="item">&nbsp;{{ name }}</a>
+              {% endfor %}
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Footer Header</h4>
+          <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+        </div>
+      </div>
+    </div>
+      <div class="ui inverted section divider"></div>
+      <div class="ui centered align grid">
+          <p class="copyleft">&copy; {{ AUTHOR }} 2013-2016</p>
+      </div>
+  </div>
+  {% endblock %}
+</div>
+
+{% if (article and article.photo_gallery) or (articles_page and articles_page.object_list[0].photo_gallery) %}
+<!-- Magnific Popup core JS file -->
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/jquery.magnific-popup.min.js"></script>
+<script>
+$('.gallery').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    gallery: {
+        enabled: true,
+        navigateByImgClick: true,
+        preload: [1,2]
+    },
+    image: {
+        titleSrc: function(item) {
+            if (item.el.attr('caption') && item.el.attr('exif')) {
+                return (item.el.attr('caption').replace(/\\n/g, '<br />') +
+                        '<small>' + item.el.attr('title') + ' - ' + item.el.attr('exif') + '</small>');
+            }
+            return item.el.attr('title') + '<small>' + item.el.attr('exif') + '</small>';
+        } }
+});
+</script>
+{% endif %}
+</body>
+
+</html>

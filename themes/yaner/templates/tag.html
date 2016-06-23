@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block title %}{{ SITENAME }} <small>{{ tag }}</small>{% endblock %}
+
+{% block background %}
+<style type="text/css">
+.masthead.segment.bg:after {
+    background-image: url('{{ SITEURL }}/background/{{ tag }}.jpg');
+}
+</style>
+{% endblock %}
+
+{% block articletitle %}
+<h1 class="ui inverted header">
+    {{ tag }}
+</h1>
+{% endblock %}

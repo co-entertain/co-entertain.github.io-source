@@ -1,7 +1,7 @@
 title:Golang 初学
 Date: 2015-07-31 20:00
 Modified: 2015-07-31 20:00
-Category: Golang
+Category: 技术改变生活 
 Tags: Programming, Tutorial
 Slug: first-glance-at-go 
 Authors: nullne

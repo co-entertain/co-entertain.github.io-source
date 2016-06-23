@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import os
+
 
 AUTHOR = u'nullne'
 SITENAME = u'NULLNE'
@@ -8,13 +10,19 @@ SITEURL = ''
 #GITHUB_URL = 'https://github.com/nullne'
 GOOGLE_ANALYTICS = "UA-56583262-1"
 
-THEME = 'themes/nullne'
+THEME = 'themes/yaner'
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ["tipue_search"]
+PLUGINS = ["tipue_search", "encrypt_content", "photos"]
+ENCRYPT_CONTENT = {
+    'title_prefix': '<i class="lock icon"></i>',
+    'summary': 'This content is encrypted.',
+    'categories': [u'Dear Diary'],
+    'password': 'love'
+}
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'search'))
 
 PATH = 'content'
-STATIC_PATHS = ['million','archive']
+STATIC_PATHS = ['million', 'archive', 'background']
 #ARTICLE_PATHS = ['blog']
 ARTICLE_SAVE_AS = '{category}/{date:%Y}/{slug}.html'
 ARTICLE_URL = '{category}/{date:%Y}/{slug}.html'
@@ -22,6 +30,14 @@ PAGE_SAVE_AS = '{slug}.html'
 PAGE_URL = '{slug}.html'
 DRAFT_SAVE_AS = 'draft/{slug}.html'
 DRAFT_URL = 'draft/{slug}.html'
+
+# photos
+PHOTO_LIBRARY =  os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    'content/images/')
+PHOTO_GALLERY = (1024, 768, 80)
+PHOTO_ARTICLE = (760, 506, 80)
+PHOTO_THUMB = (150, 150, 80)
 
 SUMMARY_MAX_LENGTH = 10
 TIMEZONE = 'Asia/Shanghai'
@@ -45,7 +61,7 @@ SOCIAL = (('Github', 'https://github.com/nullne'),
         ('豆瓣', 'http://www.douban.com/people/nullnes/'),
         ('微博', 'http://weibo.com/nullne'),)
 
-DEFAULT_PAGINATION = 100
+DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

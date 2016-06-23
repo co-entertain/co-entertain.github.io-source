@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block customcss %}
+<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+{% endblock %}
+
+{% block customjs %}
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch_content.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch_set.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.min.js"></script>
+<script>
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+         'show': 10,
+         'mode': 'json',
+         'contentLocation': '{{ SITEURL }}/tipuesearch_content.json'
+     });
+});
+</script>
+{% endblock %}
+
+{% block title %}
+Search - {{ SITENAME|striptags }}
+{% endblock title %}
+
+{% block content %}
+<div class="ui text container">
+<form action="search.html">
+    <input type="text" name="q" id="tipue_search_input" autocomplete="off" required>
+</form>
+<div id="tipue_search_content"></div>
+</div>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block background %}
+<style type="text/css">
+.masthead.segment.bg:after {
+    background-image: url('{{ SITEURL }}/background/{{ category.name }}.jpg');
+}
+</style>
+{% endblock %}
+
+{% block title %}{{ SITENAME }} <small>{{ category }}</small>{% endblock %}
+
+{% block articletitle %}
+<h1 class="ui inverted header">
+    {{ category }}
+</h1>
+{% endblock %}

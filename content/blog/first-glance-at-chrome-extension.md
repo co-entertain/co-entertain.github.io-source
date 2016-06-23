@@ -1,7 +1,7 @@
 title:报销助手--Chrome插件 
 Date: 2015-12-27 11:11
 Modified: 2015-12-27 11:11
-Category: Web 
+Category: 技术改变生活 
 Tags: Chrome-Extension, js
 Slug: chrome-extension-reimbursement-assistant 
 Authors: nullne 
@@ -52,6 +52,10 @@ Talk is cheap! 仔细分析一番决定写一个Chrome插件，虽然之前没�
 - [一个简单的 chrome extension 的入门教程](https://robots.thoughtbot.com/how-to-make-a-chrome-extension)
 - 主要是 JS 太难，遇到各种 JS 问题
 - Python 实现简单爬去考勤数据，这个相对熟悉一点写起来很快
+
+### 持续跟进
+之后过了很久，公司的报销系统更新了，导致插件不能继续使用。好多人RTX问我啥时候能再更新一版，当时就觉得满满的成就感。那个周末就抽空，匹配了新的报销系统，那个感觉真是好极了，虽然没有任何物质上的回报。
+
 
 ##第一次邮件
 

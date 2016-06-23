@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block customcss %}
+<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/pygment.css">
+{% endblock %}
+
+{% block background %}
+<style type="text/css">
+.masthead.segment.bg:after {
+    background-image: url('{{ SITEURL }}/{{ article.photo_image[1] if article.photo_image else 'background/' +  article.category.name + '.jpg'}}');
+}
+</style>
+{% endblock %}
+
+{% block customjs %}
+<script>
+$(document)
+    .ready(function() {
+        $('.card .dimmer')
+            .dimmer({
+                on: 'hover'
+            })
+        ;
+        $('.ui.sticky')
+            .sticky({
+                context: '#allude',
+                offset: 63,
+            })
+        ;
+    });
+</script>
+{% endblock %}
+
+{% block windowtitle %} {{ article.title }} {% endblock %}
+
+{% block indextitle %}{% endblock %}
+
+{% block extrahead %}
+<script src="https://apis.google.com/js/plusone.js"></script>
+{% endblock %}
+
+{% block articletitle %}
+<h1 class="ui inverted header">
+    {{ article.title }}
+</h1>
+{% endblock %}
+
+{% block content %}
+<div class="ui basic segment" id="allude" style="min-height:500px">
+  <div class="right ui rail" style="left: 78%;margin-top: 15px;min-height: 380px;padding-left: 0px;margin-left: 0px;width: 272px !important;z-index: 1;">
+      <div class="ui sticky" style="">
+          <div class="ui card">
+              <div class="ui slide right reveal image">
+                  <div class="visible content">
+                      <img class="ui fluid image" src="{{ SITEURL }}/theme/img/tom.jpg">
+                  </div>
+                  <div class="hidden content">
+                      <img class="ui fluid image" src="{{ SITEURL }}/theme/img/alipay.png">
+                  </div>
+              </div>
+
+              <div class="content">
+                  <a href="{{ SITEURL }}/about.html" class="header">{{ article.author }}</a>
+                  <div class="meta">
+                      <span class="date">{{ article.date|strftime('%b %-d, %Y') }}</span>
+                  </div>
+              </div>
+              <div class="extra content">
+                  {% if article.tags %} 
+                  Tags:&nbsp;
+                  {% for tag in article.tags %}
+                  <a href="{{ SITEURL }}/{{ tag.url }}" class="">{{ tag }}</a>,&nbsp;
+                  {% endfor %}
+                  {% endif %} 
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="ui text container">{{ article.content }}</div>
+</div>
+<div class="ui hidden divider"></div>
+
+
+    {% if article.photo_gallery %}
+    <div class="ui basic segment">
+        <h4 class="ui horizontal divider header">
+            <i class="photo icon"></i>
+            Gallery
+        </h4>
+    </div>
+    <div class="ui images gallery">
+        {% for name, photo, thumb, exif, caption in article.photo_gallery[0][1] %}
+        <a href="{{ SITEURL }}/{{ photo }}" title="{{ name }}" exif="{{ exif }}" caption="{{ caption }}"><img class="ui image" src="{{ SITEURL }}/{{ thumb }}"></a>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+<h4 class="ui horizontal divider header">
+    <i class="comment icon"></i>
+    留下你的评论
+</h4>
+
+<!-- google plus comment -->
+<div class="ui centered grid" >
+    <div id="comments" class="column"></div>
+    <script src="https://apis.google.com/js/plusone.js"></script>
+    <script>
+gapi.comments.render('comments', {
+    href: window.location,
+    width: '624',
+    first_party_property: 'BLOGGER',
+    view_type: 'FILTERED_POSTMOD'
+});
+    </script>
+
+    <!--
+        <div id="commentscounter"></div>
+        <script>
+gapi.commentcount.render('commentscounter', {
+    href: window.location
+});
+        </script>
+        -->
+</div>
+{% endblock %}

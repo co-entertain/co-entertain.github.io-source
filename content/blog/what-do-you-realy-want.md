@@ -1,7 +1,7 @@
 title:你到底想要一个什么的工作 
 Date: 2015-03-25 17:20
 Modified: 2015-03-25 17:20
-Category: 琐碎 
+Category: Dear Diary 
 Tags: work 
 Slug: What-do-you-really-want 
 Authors: nullne 
