@@ -1,10 +1,8 @@
 title:SSH学习笔记之--SSH Tunnel 
 Date: 2015-08-27 10:20
 Modified: 2015-08-27 10:20
-Category: 技术改变生活 
 Tags: SSH, tunnel 
 Slug: ssh-tunnel 
-Authors: nullne 
 ###SSH隧道
 本文前半部分摘录自 [SSH Tunnel - Local and Remote Port Forwarding Explained With Examples](http://blog.trackets.com/2014/05/17/ssh-tunnel-local-and-remote-port-forwarding-explained-with-examples.html), 后面是自己在亲自实践的过程中遇到的问题。  
 

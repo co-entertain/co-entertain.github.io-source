@@ -2,9 +2,7 @@ title:SSH学习笔记之--SSH-Agent
 Date: 2015-08-27 10:20
 Modified: 2015-08-27 10:20
 Tags: SSH, Agent
-Category: 技术改变生活 
 Slug: ssh-agent 
-Authors: nullne 
 ###SSH Agent
 ####SSH Agent简介
 ssh-agent是专为既令人愉快又安全的处理RSA和DSA密钥而设计的特殊程序，它包括在OpenSSH分发内。不同于ssh，ssh-agent是个长时间持续运行的守护进程（daemon），设计它的唯一目的就是对解密的专用密钥进行高速缓存。

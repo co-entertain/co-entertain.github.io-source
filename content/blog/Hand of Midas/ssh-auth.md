@@ -1,10 +1,8 @@
 title:SSH学习笔记之--SSH 认证 
 Date: 2015-08-27 10:20
 Modified: 2015-08-27 10:20
-Category: 技术改变生活 
 Tags: SSH, Auth 
 Slug: ssh-auth 
-Authors: nullne 
 ###SSH认证过程
 首先感谢Steve Friedlde 的文章[An Illustrated Guide to SSH Agent Forwarding](http://www.unixwiz.net/techtips/ssh-agent-forwarding.html)，感谢[SSH Agent Forwarding原理](http://blog.csdn.net/sdcxyz/article/details/41487897)(注：该文也为转载，但是原博链接已经失效)。本文主要内容参考引用自这两篇文章，并做了部分错误勘正。
 ####密码认证  

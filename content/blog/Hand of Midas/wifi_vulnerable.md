@@ -1,10 +1,8 @@
 title:WIFI 热点欺骗
 Date: 2014-11-23 15:21
 Modified: 2014-11-23 15:21
-Category: 技术改变生活 
 Tags: WIFI, Linux
 Slug: real-attack-show-wifi-vulnerability
-Authors: nullne
 Summary:
 _很久以前看过一篇关于WIFI脆弱性的[介绍](http://fex.baidu.com/blog/2014/04/traffic-hijack/)(找了好久终于被我找到了)，其中有一部分讲的是由于本身协议的弱点，相同 ssid 的热点会被合并为同一个，至于用户最终连接哪个热点取决于他所能接收到的信号强度。不知道此刻各位看官脑洞有没有大开？_
 

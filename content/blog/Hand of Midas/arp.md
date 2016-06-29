@@ -1,10 +1,8 @@
 title:ARP protocol analysis 
 Date: 2011-11-03 10:20
 Modified: 2011-12-05 19:30
-Category: 技术改变生活 
 Tags: Arp,wireshark 
 Slug: ARP-protocol 
-Authors: nullne 
 Summary: Short version for index and feeds
 gallery: {photo}demo
 image: {photo}demo/nan.jpg

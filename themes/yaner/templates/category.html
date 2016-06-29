@@ -14,4 +14,9 @@
 <h1 class="ui inverted header">
     {{ category }}
 </h1>
+    {% for key, value in CATEGORY_INFO.items() %}
+    {% if key == category %}
+    <h2>{{ value }}</h2>
+    {% endif %}
+    {% endfor %}
 {% endblock %}

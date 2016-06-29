@@ -43,6 +43,7 @@ SUMMARY_MAX_LENGTH = 10
 TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = u'en'
+DEFAULT_DATE = 'fs'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = 'all-atom.xml'
@@ -76,3 +77,9 @@ REVERSE_CATEGORY_ORDER = True
 NEWEST_FIRST_ARCHIVES = True
 ARTICLE_EXCLUDES = ['archive']
 PYGMENTS_RST_OPTIONS = {'classprefix': 'pgcss', 'linenos': 'table'}
+
+CATEGORY_INFO = {
+    u'琐碎': u'琐碎的事情',
+    u'Hand of Midas': u'点金手，助我点石成金',
+    u'Dear Diary': u'记录岁月流逝',
+}

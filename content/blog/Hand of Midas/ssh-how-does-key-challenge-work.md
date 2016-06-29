@@ -1,10 +1,8 @@
 title:SSH学习笔记之--Key Challenge 如何工作 
 Date: 2015-08-27 10:20
 Modified: 2015-08-27 10:20
-Category: 技术改变生活 
 Tags: SSH, Key Challenge 
 Slug: how-does-key-challenges-work
-Authors: nullne 
 ####Key Challenge 如何工作
 	
 agent非常聪明的一点就是他可以不用将private key暴露给任何人就可以确认一个人的身份（确切的说是拥有私钥的人）。  

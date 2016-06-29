@@ -1,10 +1,8 @@
 title:报销助手--Chrome插件 
 Date: 2015-12-27 11:11
 Modified: 2015-12-27 11:11
-Category: 技术改变生活 
 Tags: Chrome-Extension, js
 Slug: chrome-extension-reimbursement-assistant 
-Authors: nullne 
 ## 楔子
 其实现在已经是很久以后了，太懒了
 
