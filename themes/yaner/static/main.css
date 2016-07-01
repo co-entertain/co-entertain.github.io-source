@@ -131,3 +131,7 @@
 .copyleft{
     width: auto;
 }
+#google-comment{
+    margin-top: 20px;
+    min-height: 250px;
+}

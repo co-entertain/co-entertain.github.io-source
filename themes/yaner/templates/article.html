@@ -100,25 +100,16 @@ $(document)
 </h4>
 
 <!-- google plus comment -->
-<div class="ui centered grid" >
-    <div id="comments" class="column"></div>
-    <script src="https://apis.google.com/js/plusone.js"></script>
-    <script>
-gapi.comments.render('comments', {
-    href: window.location,
-    width: '624',
-    first_party_property: 'BLOGGER',
-    view_type: 'FILTERED_POSTMOD'
-});
-    </script>
-
-    <!--
-        <div id="commentscounter"></div>
-        <script>
-gapi.commentcount.render('commentscounter', {
-    href: window.location
-});
-        </script>
-        -->
+<div class="ui two column centered grid" id="google-comment">
+    <div id="comments" class="column">
+        <div class="ui brown icon  message" style="display: none;" id="gfw">
+            <i class="notched circle loading icon"></i>
+            <ul class="list">
+                <li>这儿本来是Google Comments</li>
+                <li>EMBARRASSED about Great Fire Wall...</li>
+                <li>但是不会翻墙就是你的不对了</li>
+            </ul>
+        </div>
+    </div>
 </div>
 {% endblock %}

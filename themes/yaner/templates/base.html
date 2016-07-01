@@ -34,6 +34,12 @@
   <script>
   $(document)
     .ready(function() {
+        // change copyleft
+        var now = new Date();
+        var copyleft = $('.copyleft').html().replace(/2013.*/, "2013 - " + now.getFullYear());
+        $('.copyleft').html(copyleft)
+
+
         $('div.search').keypress(function(e) {
             if(e.which == 13) {
                 var q = $(this).find('input').val()
@@ -202,7 +208,7 @@
     </div>
       <div class="ui inverted section divider"></div>
       <div class="ui centered align grid">
-          <p class="copyleft">&copy; {{ AUTHOR }} 2013-2016</p>
+          <p class="copyleft">&copy; {{ AUTHOR }} 2013-</p>
       </div>
   </div>
   {% endblock %}
@@ -229,6 +235,42 @@ $('.gallery').magnificPopup({
             return item.el.attr('title') + '<small>' + item.el.attr('exif') + '</small>';
         } }
 });
+</script>
+{% endif %}
+
+{% if article %}
+<script>
+var timeout = 30;
+poll = function () {
+  setTimeout(function () {
+    timeout--;
+    if (typeof gapi !== 'undefined') {
+      // External file loaded
+        $('#gfw').remove()
+    }
+    else if (timeout > 0) {
+      poll();
+    }
+    else {
+      // External library failed to load
+        $('#gfw').show()
+    }
+  }, 100);
+};
+
+poll();
+</script>
+<script src="https://apis.google.com/js/plusone.js"></script>
+<script>
+gapi.comments.render('comments', {
+    href: window.location,
+    width: 624,
+    height: 250,
+    first_party_property: 'BLOGGER',
+    view_type: 'FILTERED_POSTMOD'
+});
+$('#gfw').remove()
+
 </script>
 {% endif %}
 </body>
