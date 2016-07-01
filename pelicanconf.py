@@ -35,7 +35,7 @@ DRAFT_URL = 'draft/{slug}.html'
 PHOTO_LIBRARY =  os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
     'content/images/')
-PHOTO_GALLERY = (1440, 900, 100)
+PHOTO_GALLERY = (144000, 90000, 100)
 PHOTO_ARTICLE = (1440, 700, 100)
 PHOTO_THUMB = (150, 150, 80)
 

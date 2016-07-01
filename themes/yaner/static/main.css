@@ -135,3 +135,18 @@
     margin-top: 20px;
     min-height: 250px;
 }
+.ui.images.centered.gallery {
+    text-align: center;
+}
+#allude{
+    min-height: 500px;
+}
+#allude .right.ui.rail{
+    left: 78%;
+    margin-top: 15px;
+    min-height: 380px;
+    padding-left: 0px;
+    margin-left: 0px;
+    width: 272px 
+    !important;z-index: 1;
+}

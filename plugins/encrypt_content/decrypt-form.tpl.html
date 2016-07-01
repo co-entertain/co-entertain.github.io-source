@@ -7,6 +7,7 @@
 </div>
 
 <div class="ui page dimmer" id="lock-lock">
+    <i class="big inverted remove link icon" style="position:fixed"></i>
     <div class=" content">
         <form id="pec-decrypt-form" class="ui form" onsubmit="javascript:$('#pec-decrypt-content').click();return false;">
             <div class="inline field">
@@ -23,6 +24,9 @@ $(document).ready(function(){
         closable: false,
     });
     $('#lock-lock').dimmer('show');
+    $('.remove.link.icon').click(function(){
+        $('#lock-lock').dimmer('hide');
+    })
 });
 </script>
 

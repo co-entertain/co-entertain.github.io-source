@@ -45,8 +45,8 @@ $(document)
 {% endblock %}
 
 {% block content %}
-<div class="ui basic segment" id="allude" style="min-height:500px">
-  <div class="right ui rail" style="left: 78%;margin-top: 15px;min-height: 380px;padding-left: 0px;margin-left: 0px;width: 272px !important;z-index: 1;">
+<div class="ui basic segment" id="allude" style="">
+  <div class="right ui rail" style="">
       <div class="ui sticky" style="">
           <div class="ui card">
               <div class="ui slide right reveal image">
@@ -87,9 +87,9 @@ $(document)
             Gallery
         </h4>
     </div>
-    <div class="ui images gallery">
+    <div class="ui images centered gallery">
         {% for name, photo, thumb, exif, caption in article.photo_gallery[0][1] %}
-        <a href="{{ SITEURL }}/{{ photo }}" title="{{ name }}" exif="{{ exif }}" caption="{{ caption }}"><img class="ui image" src="{{ SITEURL }}/{{ thumb }}"></a>
+        <a class="ui image" href="{{ SITEURL }}/{{ photo }}" title="{{ name }}" exif="{{ exif }}" caption="{{ caption }}"><img src="{{ SITEURL }}/{{ thumb }}"></a>
         {% endfor %}
     </div>
     {% endif %}
