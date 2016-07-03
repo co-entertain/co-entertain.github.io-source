@@ -3,6 +3,7 @@ Date: 2015-12-27 11:11
 Modified: 2015-12-27 11:11
 Tags: Chrome-Extension, js
 Slug: chrome-extension-reimbursement-assistant 
+image: {photo}Hand of Midas/chinacache-seat.jpg
 ## 楔子
 其实现在已经是很久以后了，太懒了
 
