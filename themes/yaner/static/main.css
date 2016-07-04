@@ -160,7 +160,11 @@
     line-height: 1.1em;
 }
 .poem {
+    font-size: 14px;
     width: 1.5em;
     float: right;
     line-height: 1.4em;
+}
+#poem{
+    font-size: 0;
 }
