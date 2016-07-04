@@ -154,3 +154,12 @@
     width: 272px 
     !important;z-index: 1;
 }
+.poem.head {
+    font-size:x-large;
+    font-weight: bold;
+    line-height: 1.1em;
+}
+.poem {
+    width: 1.5em;
+    float: right;
+}
