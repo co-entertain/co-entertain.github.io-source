@@ -12,7 +12,7 @@ GOOGLE_ANALYTICS = "UA-56583262-1"
 
 THEME = 'themes/yaner'
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ["tipue_search", "encrypt_content", "photos"]
+PLUGINS = ['tipue_search', 'encrypt_content', 'photos', 'liquid_tags.vimeo']
 ENCRYPT_CONTENT = {
     'title_prefix': '<i class="lock icon"></i>',
     'summary': 'This content is encrypted.',
