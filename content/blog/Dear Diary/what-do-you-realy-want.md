@@ -1,10 +1,9 @@
 title:你到底想要一个什么的工作 
 Date: 2015-03-25 17:20
 Modified: 2015-03-25 17:20
-Category: Dear Diary 
 Tags: work 
 Slug: What-do-you-really-want 
-Authors: nullne 
+image: {photo}Dear Diary/google.jpg
 
 每次都不知道怎么开头。。
 来了CC两个多礼拜吧，什么事情也没有做其实，无非是每天看看文档，帮头儿做下技术调研。刚才机器挂掉了，所以顺便出来坐坐

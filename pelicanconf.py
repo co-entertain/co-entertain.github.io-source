@@ -62,7 +62,7 @@ SOCIAL = (('Github', 'https://github.com/nullne'),
         ('豆瓣', 'http://www.douban.com/people/nullnes/'),
         ('微博', 'http://weibo.com/nullne'),)
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 30
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

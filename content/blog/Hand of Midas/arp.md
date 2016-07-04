@@ -4,12 +4,8 @@ Modified: 2011-12-05 19:30
 Tags: Arp,wireshark 
 Slug: ARP-protocol 
 Summary: Short version for index and feeds
-gallery: {photo}demo
-image: {photo}demo/nan.jpg
+image: {photo}Hand of Midas/arp.jpg
 
-
-
-![Alt Text]({filename}./images/nan.jpg)
 # ARP 协议分析
 
 @[arp|wireshark]

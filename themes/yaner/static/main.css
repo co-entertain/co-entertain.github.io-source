@@ -137,6 +137,10 @@
 }
 .ui.images.centered.gallery {
     text-align: center;
+    height: 200px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 #allude{
     min-height: 500px;

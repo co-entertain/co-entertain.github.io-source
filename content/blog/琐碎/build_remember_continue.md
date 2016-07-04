@@ -1,10 +1,9 @@
 title:建站续，附乱七八糟
 Date: 2014-11-11 11:11
 Modified: 2014-11-11 11:11
-Category: 琐碎
 Tags: 找工作,blog
 Slug: build-and-remember-continued
-Authors: nullne
+image: {photo}suo-sui/fucked-up-air.jpg
 Summary: 
 *逛了一圈论坛博客神马的发现好多人也都在写点东西纪念今天*
 
