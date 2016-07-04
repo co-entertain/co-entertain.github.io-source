@@ -3,6 +3,7 @@ Date: 2015-07-31 20:00
 Modified: 2015-07-31 20:00
 Tags: Programming, Tutorial
 Slug: first-glance-at-go 
+image: {photo}Hand of Midas/gopher-head.png
 Summary: 
 ##Go
 

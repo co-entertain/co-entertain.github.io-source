@@ -3,6 +3,7 @@ Date: 2015-08-27 10:20
 Modified: 2015-08-27 10:20
 Tags: SSH, anget hijacking
 Slug: ssh-agent-hijacking 
+image: {photo}Hand of Midas/hijacking.jpg
 ####Agent Hijacking
 agent forwarding在安全方面有一个好处就是用户的私钥永远不会出现在远端服务器或者传输过程中。但却会面临另外一个安全隐患：agent hijacking
 	  

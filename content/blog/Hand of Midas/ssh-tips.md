@@ -3,6 +3,7 @@ Date: 2015-08-27 10:20
 Modified: 2015-08-27 10:20  
 Tags: SSH, tips  
 Slug: ssh-tips  
+image: {photo}Hand of Midas/usage-tips.jpg
 ###SSH使用技巧
 ####通过SSH执行命令
 

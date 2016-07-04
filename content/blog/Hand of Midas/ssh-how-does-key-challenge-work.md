@@ -3,6 +3,7 @@ Date: 2015-08-27 10:20
 Modified: 2015-08-27 10:20
 Tags: SSH, Key Challenge 
 Slug: how-does-key-challenges-work
+image: {photo}Hand of Midas/key-challenge.jpg
 ####Key Challenge 如何工作
 	
 agent非常聪明的一点就是他可以不用将private key暴露给任何人就可以确认一个人的身份（确切的说是拥有私钥的人）。  
