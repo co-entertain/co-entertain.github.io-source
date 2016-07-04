@@ -189,7 +189,7 @@
           <h4 class="ui inverted header">Social</h4>
           <div class="ui inverted link list">
               {% for name, link in SOCIAL %}
-              <a href="{{ link }}" class="item">&nbsp;{{ name }}</a>
+              <a href="{{ link }}" class="item"><i class="icon" style="content:url('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/icons/{{ name }}.png')"></i>{{ name }}</a>
               {% endfor %}
           </div>
         </div>

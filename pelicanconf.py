@@ -57,7 +57,7 @@ LINKS = (('Zonca', 'http://zonca.github.io/'),
         )
 
 # Social widget
-SOCIAL = (('Github', 'https://github.com/nullne'),
+SOCIAL = (('GitHub', 'https://github.com/nullne'),
         ('LinkedIn', 'https://www.linkedin.com/pub/le-yu/89/980/1a5'),
         ('豆瓣', 'http://www.douban.com/people/nullnes/'),
         ('微博', 'http://weibo.com/nullne'),)
