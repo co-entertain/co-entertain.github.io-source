@@ -1,5 +1,5 @@
 title: Ingress -- 七天升八小记
-Tags: 旅游 Ingress Amoy
+Tags: 旅游, Ingress, Amoy
 Slug: ingress
 image: {photo}ingress/logo.jpg
 
