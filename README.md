@@ -10,6 +10,8 @@ show how it works here!
 		easy_install-2.7 pip
 		pip install virtualenv
 		pip install virtualenvwrapper
+		# on mac os x may be you need and ignore flag
+		# pip install virtualenvwrapper --ignore-installed six
 
 2. add following in your .profile file, and run it
 	

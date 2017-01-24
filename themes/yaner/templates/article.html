@@ -12,22 +12,6 @@
 {% endblock %}
 
 {% block customjs %}
-<script>
-$(document)
-    .ready(function() {
-        $('.card .dimmer')
-            .dimmer({
-                on: 'hover'
-            })
-        ;
-        $('.ui.sticky')
-            .sticky({
-                context: '#allude',
-                offset: 63,
-            })
-        ;
-    });
-</script>
 {% endblock %}
 
 {% block windowtitle %} {{ article.title }} {% endblock %}
@@ -46,53 +30,24 @@ $(document)
 
 {% block content %}
 <div class="ui basic segment" id="allude" style="">
-  <div class="right ui rail" style="">
-      <div class="ui sticky" style="">
-          <div class="ui card">
-              <div class="ui slide right reveal image">
-                  <div class="visible content">
-                      <img class="ui fluid image" src="{{ SITEURL }}/theme/img/big-avatar.jpg">
-                  </div>
-                  <div class="hidden content">
-                      <img class="ui fluid image" src="{{ SITEURL }}/theme/img/alipay.png">
-                  </div>
-              </div>
-
-              <div class="content">
-                  <a href="{{ SITEURL }}/about.html" class="header">{{ article.author }}</a>
-                  <div class="meta">
-                      <span class="date">{{ article.date|strftime('%b %-d, %Y') }}</span>
-                  </div>
-              </div>
-              <div class="extra content">
-                  {% if article.tags %} 
-                  Tags:&nbsp;
-                  {% for tag in article.tags %}
-                  <a href="{{ SITEURL }}/{{ tag.url }}" class="">{{ tag }}</a>,&nbsp;
-                  {% endfor %}
-                  {% endif %} 
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="ui text container">{{ article.content }}</div>
+  <div class="ui container">{{ article.content }}</div>
 </div>
 <div class="ui hidden divider"></div>
 
 
-    {% if article.photo_gallery %}
-    <div class="ui basic segment">
-        <h4 class="ui horizontal divider header">
-            <i class="photo icon"></i>
-            Gallery
-        </h4>
-    </div>
-    <div class="ui images centered gallery">
-        {% for name, photo, thumb, exif, caption in article.photo_gallery[0][1] %}
-        <a class="ui image" href="{{ SITEURL }}/{{ photo }}" title="{{ name }}" exif="{{ exif }}" caption="{{ caption }}"><img src="{{ SITEURL }}/{{ thumb }}"></a>
-        {% endfor %}
-    </div>
-    {% endif %}
+{% if article.photo_gallery %}
+<div class="ui basic segment">
+    <h4 class="ui horizontal divider header">
+        <i class="photo icon"></i>
+        Gallery
+    </h4>
+</div>
+<div class="ui images centered gallery">
+    {% for name, photo, thumb, exif, caption in article.photo_gallery[0][1] %}
+    <a class="ui image" href="{{ SITEURL }}/{{ photo }}" title="{{ name }}" exif="{{ exif }}" caption="{{ caption }}"><img src="{{ SITEURL }}/{{ thumb }}"></a>
+    {% endfor %}
+</div>
+{% endif %}
 
 <h4 class="ui horizontal divider header">
     <i class="comment icon"></i>
