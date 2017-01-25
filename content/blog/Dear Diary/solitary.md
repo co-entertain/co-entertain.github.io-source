@@ -1,9 +1,7 @@
-title: Capital Solitary 
+title: Following
 Tags: solitary 
 Slug: solitary 
 status: draft
-
-
 
 很奇怪的书写方式，面对屏幕进行写作。嗯，一个人在二十多岁碌碌无为的时候最好的噱头是安插作家的头衔，哪怕只是写了一两行，代码！
 

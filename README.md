@@ -26,3 +26,7 @@ show how it works here!
 		
 ### work instantly
 all you need is git pull and write you blod, commit and push, wait a minute and then you will see online
+
+### 如何本地调试
+1. 创建一个本地的python环境， workon pelican 
+2. make content && make serve
