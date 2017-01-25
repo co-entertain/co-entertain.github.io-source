@@ -1,4 +1,5 @@
 title: Ingress -- 七天升八小记
+Date: 2016-09-10 20:00
 Tags: 旅游, Ingress, Amoy
 Slug: ingress
 image: {photo}ingress/logo.jpg
