@@ -1,4 +1,10 @@
+title:从北京逃离和灰溜溜的回来 
+Date: 2016-09-22 22:00
+Tags: work 
+Slug: run-away-from-Beijing 
+image: {photo}Dear Diary/transformer-in-amoy.jpg
 2016年八月二十九号晚上，他拨通了电话
+
 > ”您好，麻烦帮我订一下周五晚上的大床房。”
 
 ###返京
