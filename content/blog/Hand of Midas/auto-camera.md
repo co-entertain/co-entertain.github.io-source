@@ -6,3 +6,4 @@ Slug: auto-camera
 Summary: auto camera
 
 有一个想法
+
